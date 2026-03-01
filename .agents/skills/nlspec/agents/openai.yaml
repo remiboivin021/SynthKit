@@ -1,0 +1,4 @@
+interface:
+  display_name: "NLSpec"
+  short_description: "Produce authoritative, implementable natural language specifications."
+  default_prompt: "Use $nlspec to translate a product or technical intent into a deterministic, testable specification that serves as a normative contract for implementation."

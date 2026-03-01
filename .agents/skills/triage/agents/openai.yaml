@@ -1,0 +1,4 @@
+interface:
+  display_name: "Triage"
+  short_description: "Classify requests and select the correct execution flow."
+  default_prompt: "Use $triage to classify this request and determine which skills need to be invoked and in what order."

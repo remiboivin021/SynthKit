@@ -1,0 +1,4 @@
+interface:
+  display_name: "Preflight"
+  short_description: "Validate execution readiness before any code is written."
+  default_prompt: "Use $preflight to verify that branch, worktree, STATE file, and required gates are all in place before coding starts."

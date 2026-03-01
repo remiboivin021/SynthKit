@@ -1,0 +1,4 @@
+interface:
+  display_name: "Governance"
+  short_description: "Protect constitutional invariants and block governance violations."
+  default_prompt: "Use $governance to check whether this change violates a constitutional rule, requires an ADR, or needs a migration plan."

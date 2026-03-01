@@ -1,0 +1,4 @@
+interface:
+  display_name: "ADR"
+  short_description: "Draft Architecture Decision Records for significant technical decisions."
+  default_prompt: "Use $adr to determine if an ADR is required for this change, then draft it following the template in docs/governance/adr/_template.md."

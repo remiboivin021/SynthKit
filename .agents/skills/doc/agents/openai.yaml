@@ -1,0 +1,4 @@
+interface:
+  display_name: "Doc"
+  short_description: "Detect documentation gaps and produce accurate, maintainable doc updates."
+  default_prompt: "Use $doc to identify which documentation needs updating after this change, and produce the minimal required updates."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worktree"
+  short_description: "Manage parallel feature work — create worktrees, detect collisions, sequence merges."
+  default_prompt: "Use $worktree to create a new feature worktree, check for collisions with active parallel features, or produce a safe merge sequence when multiple branches are ready."

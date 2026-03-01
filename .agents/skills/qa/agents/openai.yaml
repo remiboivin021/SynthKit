@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA"
+  short_description: "Validate behavior against acceptance criteria and detect regressions."
+  default_prompt: "Use $qa to build a test strategy, validate acceptance criteria from STATE.<slug>.md, and return PASS or FAIL with findings."

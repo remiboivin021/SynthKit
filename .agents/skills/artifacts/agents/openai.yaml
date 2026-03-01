@@ -1,0 +1,4 @@
+interface:
+  display_name: "Artifacts"
+  short_description: "Enforce artifact ownership and lifecycle — STATE, TODO, DECISIONS, ADR, and doc structure."
+  default_prompt: "Use $artifacts to verify that all required feature artifacts exist and are owned by the correct skill, or to determine what must be promoted, archived, or updated after a feature merges."

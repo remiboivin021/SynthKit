@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review"
+  short_description: "Final merge gate — scope discipline, commit quality, gate completeness."
+  default_prompt: "Use $review as the final check before merge. Verify scope adherence, atomic commits, upstream gates, and return APPROVED or CHANGES REQUESTED."

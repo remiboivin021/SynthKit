@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security"
+  short_description: "Assess risk and require mitigations before merge."
+  default_prompt: "Use $security to review this change for exploitable risk. Produce a threat model, prioritized findings, and required mitigations."

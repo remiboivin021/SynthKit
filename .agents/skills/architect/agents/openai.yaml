@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architect"
+  short_description: "Make structural decisions and define implementation constraints."
+  default_prompt: "Use $architect to evaluate the structural impact of this change, define allowed scope, and determine whether an ADR is required."

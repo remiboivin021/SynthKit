@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release"
+  short_description: "Verify merge readiness — gates, artifacts, commit hygiene, release notes."
+  default_prompt: "Use $release to check whether this branch is ready to merge. Verify all gates passed, docs and ADRs are present, and produce a release note draft."

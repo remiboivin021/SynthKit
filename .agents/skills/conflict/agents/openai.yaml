@@ -1,0 +1,4 @@
+interface:
+  display_name: "Conflict"
+  short_description: "Resolve contradictory decisions between skills using the authority hierarchy."
+  default_prompt: "Use $conflict when two skills have issued contradictory decisions and execution is blocked. Produces a deterministic resolution without bypassing authority or safety rules."

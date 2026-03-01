@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architect-Security"
+  short_description: "Gate changes that are both architectural and security-sensitive."
+  default_prompt: "Use $architect-security when a change touches both system structure and a security surface (auth, secrets, connectors, trust boundaries)."
