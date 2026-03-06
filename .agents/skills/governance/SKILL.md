@@ -17,7 +17,7 @@ CONTEXT
 INPUTS AVAILABLE
 - `docs/governance/constitution.md`
 - AGENTS policy and workflow gates
-- Scope and contract artifacts (STATE.<slug>.md, ADRs, decisions)
+- Scope and contract artifacts (.agents/STATE.<slug>.md, ADRs, decisions)
 - Proposed change summary
 
 ---
@@ -114,3 +114,4 @@ F) Block / Allow Decision
 - Do not implement features
 - Do not approve governance bypass
 - Do not self-resolve constitutional ambiguity
+

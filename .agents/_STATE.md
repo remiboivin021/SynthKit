@@ -1,3 +1,4 @@
+```md
 # STATE — <feature-name>
 
 Branch: feature/<slug>  
@@ -32,6 +33,20 @@ This classification drives routing decisions.
 
 ---
 
+# Change Level
+
+Select one:
+
+- [ ] L1 — local low-risk  
+- [ ] L2 — bounded standard change  
+- [ ] L3 — structural or sensitive  
+
+If uncertain, choose the higher level.
+
+This classification drives gate strictness.
+
+---
+
 # Acceptance Criteria
 
 A feature is COMPLETE only when ALL boxes are checked.
@@ -42,10 +57,10 @@ A feature is COMPLETE only when ALL boxes are checked.
 
 Criteria must be testable.
 
-Avoid vague goals like:
+Avoid vague goals like:  
 ❌ "improve performance"
 
-Prefer:
+Prefer:  
 ✅ "reduce query latency by 30%"
 
 ---
@@ -79,6 +94,45 @@ Example:
 
 Touching these REQUIRES architect-agent approval.
 
+Anything not explicitly allowed is presumed forbidden until planner updates this file.
+
+---
+
+# Public Contract Impact
+
+Does this change affect any public contract?
+
+- [ ] no
+- [ ] yes — Rust API
+- [ ] yes — CLI
+- [ ] yes — config
+- [ ] yes — file format / schema
+- [ ] yes — pipeline semantics
+- [ ] yes — external integration behavior
+
+If yes, specify:
+
+- Migration needed: yes / no
+- ADR required: yes / no
+
+---
+
+# Required Gates
+
+Mark all that apply:
+
+- [ ] governance
+- [ ] architect
+- [ ] architect-security
+- [ ] security
+- [ ] adr
+- [ ] doc
+- [ ] qa
+- [ ] review
+- [ ] release
+
+These gates must reflect the actual triggers and contract impact of this feature.
+
 ---
 
 # Blast Radius Assessment
@@ -90,7 +144,8 @@ Planner-agent MUST classify expected impact:
 - [ ] cross-system  
 - [ ] unknown  
 
-If NOT localized → architect-agent review is recommended.
+If NOT localized → architect-agent review is recommended.  
+If unknown → coding must not start.
 
 Never discover blast radius mid-refactor.
 
@@ -106,10 +161,12 @@ Do NOT:
 - change module boundaries  
 - redesign pipelines  
 - modify scoring logic  
+- alter runtime semantics  
+- expand public surface casually  
 
 WITHOUT:
 
-architect-agent approval + ADR.
+architect-agent approval + ADR when required.
 
 Prefer extension over invention.
 
@@ -126,6 +183,8 @@ Planner-agent MUST verify this feature does NOT conflict with:
 - schemas  
 - config  
 - pipelines  
+- contract surfaces  
+- shared core modules  
 
 If conflict risk exists:
 
@@ -135,13 +194,32 @@ Parallel collisions are high risk.
 
 ---
 
+# Security Surface Check
+
+Does this feature touch:
+
+- auth / permissions  
+- secrets  
+- connectors  
+- network  
+- dependencies  
+- untrusted input  
+- trust boundaries  
+- plugin or command execution surfaces  
+
+If YES:
+
+security-agent review is mandatory.
+
+---
+
 # Execution Plan (Planner Output)
 
 1.
 2.
 3.
 
-Coder-agent MUST convert this into TODO.md BEFORE writing code.
+Coder-agent MUST convert this into `.agents/TODO.<slug>.md` BEFORE writing code.
 
 No plan → no coding.
 
@@ -157,27 +235,12 @@ Forbidden examples:
 - reorganizing directories  
 - cleaning unrelated code  
 - modernizing patterns  
+- introducing abstractions not required by scope  
+- broad “consistency” edits outside the allowed areas  
 
 If refactor pressure appears:
 
 STOP → call planner-agent.
-
----
-
-# Security Surface Check
-
-Does this feature touch:
-
-- auth / permissions  
-- secrets  
-- connectors  
-- network  
-- dependencies  
-- untrusted input  
-
-If YES:
-
-security-agent review is mandatory.
 
 ---
 
@@ -187,8 +250,9 @@ security-agent review is mandatory.
 ✔ QA passed  
 ✔ Security approved (if triggered)  
 ✔ Review approved  
-✔ Docs updated  
-✔ ADR created (if architectural)  
+✔ Docs updated (if triggered)  
+✔ ADR created (if required)  
+✔ Release readiness confirmed (if required by flow)  
 
 Only then may the feature merge.
 
@@ -202,6 +266,9 @@ Coder-agent MUST STOP immediately if:
 - architecture tension appears  
 - plan becomes invalid  
 - unexpected complexity emerges  
+- additional files are needed outside Allowed Areas  
+- public contract impact changes  
+- required gates change during execution  
 
 Call planner-agent before continuing.
 
@@ -223,18 +290,20 @@ Global optimization is forbidden during feature work.
 
 All significant implementation choices MUST be logged in:
 
-DECISIONS.md
+`.agents/DECISIONS.<slug>.md`
 
-If a decision impacts architecture → escalate to ADR.
+If a decision impacts architecture, trust boundaries, contracts, or invariants → escalate to ADR.
 
 ---
 
 # State Integrity Rule
 
-STATE.md is the single source of truth for feature scope.
+`.agents/STATE.<slug>.md` is the single source of truth for feature scope.
 
-If STATE.md becomes inaccurate:
+If `.agents/STATE.<slug>.md` becomes inaccurate:
 
 planner-agent MUST update it immediately.
 
 Never continue with stale state.
+```
+

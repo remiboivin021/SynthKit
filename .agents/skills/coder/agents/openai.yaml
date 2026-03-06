@@ -1,4 +1,5 @@
 interface:
   display_name: "Coder"
   short_description: "Implement exactly one approved task with minimal, atomic changes."
-  default_prompt: "Use $coder to implement the current task from TODO.<slug>.md. One task, one commit. Stay inside the approved scope."
+  default_prompt: "Use $coder to implement the current task from .agents/TODO.<slug>.md. One task, one commit. Stay inside the approved scope."
+

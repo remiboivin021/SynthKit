@@ -68,7 +68,7 @@ All other agents: read-only. They analyze, gate, propose, veto — never impleme
 
 ### 2.3 Authority ≠ Scope Expansion
 No authority grants permission to expand scope.
-Scope is defined exclusively in `STATE.<slug>.md`.
+Scope is defined exclusively in `.agents/STATE.<slug>.md`.
 Expanding scope without planner + architect sign-off is a constitutional violation.
 
 ---
@@ -218,7 +218,7 @@ An ADR that is missing its migration or rollback path is **incomplete** and bloc
 ## § 7 — Scope Boundaries
 
 ### 7.1 Scope Is Defined In STATE
-The `Allowed Areas` section of `STATE.<slug>.md` defines the blast radius.
+The `Allowed Areas` section of `.agents/STATE.<slug>.md` defines the blast radius.
 No file outside this list may be touched.
 
 ### 7.2 Scope Cannot Be Self-Expanded
@@ -304,7 +304,7 @@ These files are **never edited** during feature execution.
 <!-- | `.agents/AGENTS.md` | Immutable | -->
 | `.agents/_constitution.md` | Immutable |
 
-Working copies live in `TODO.<slug>.md` and `DECISIONS.<slug>.md`.
+Working copies live in `.agents/TODO.<slug>.md` and `.agents/DECISIONS.<slug>.md`.
 These are created from templates by copying — never by editing originals.
 
 ---
@@ -364,3 +364,4 @@ Maintainer/Author: <MAINTAINER_AUTHOR>
 Version: 0.1.0
 Last modified: 2026-03-01
 ---
+

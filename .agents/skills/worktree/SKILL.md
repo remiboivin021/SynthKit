@@ -17,7 +17,7 @@ CONTEXT
 
 INPUTS AVAILABLE
 - List of active worktrees (`git worktree list`)
-- `STATE.<slug>.md` for each active feature
+- `.agents/STATE.<slug>.md` for each active feature
 - AGENTS.md allowed/forbidden areas and project invariants
 - Proposed feature scope from `$planner`
 
@@ -46,14 +46,14 @@ Before starting any feature:
 2. Create a dedicated worktree:
 
 ```bash
-git worktree add ../wt-<slug> -b feature/<slug>
+git worktree add ../../tmp/wt-<slug> -b feature/<slug>
 ```
 
 3. Verify the worktree is isolated (unique branch, unique directory).
 4. Initialize working artifacts inside the worktree:
-   - Copy `.agents/_STATE.md` → `STATE.<slug>.md` (filled by `$planner`)
-   - Copy `.agents/_TODO.md` → `TODO.<slug>.md` (filled by `$coder`)
-   - Copy `.agents/_DECISIONS.md` → `DECISIONS.<slug>.md` (filled by `$coder`)
+   - Copy `.agents/_STATE.md` → `.agents/STATE.<slug>.md` (filled by `$planner`)
+   - Copy `.agents/_TODO.md` → `.agents/TODO.<slug>.md` (filled by `$coder`)
+   - Copy `.agents/_DECISIONS.md` → `.agents/DECISIONS.<slug>.md` (filled by `$coder`)
 
 Rules:
 - Each worktree MUST have a unique branch name.
@@ -115,7 +115,7 @@ No cross-branch fixes. No cherry-picks without explicit `$architect` approval.
 After a branch is merged:
 - Remove the worktree: `git worktree remove ../wt-<slug>`
 - Delete the branch if no longer needed: `git branch -d feature/<slug>`
-- Archive `STATE.<slug>.md`, `TODO.<slug>.md`, `DECISIONS.<slug>.md` if audit trail is required.
+- Archive `.agents/STATE.<slug>.md`, `.agents/TODO.<slug>.md`, `.agents/DECISIONS.<slug>.md` if audit trail is required.
 
 ---
 
@@ -162,3 +162,4 @@ Exact shell commands to create and initialize the worktree.
 - Do not resolve collision by merging scope
 - Do not approve parallel work with undefined blast radius
 - Do not skip rebase + revalidation after merge sequencing
+

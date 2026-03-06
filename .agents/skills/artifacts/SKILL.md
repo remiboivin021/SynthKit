@@ -92,10 +92,10 @@ Rule: If a decision impacts architecture, storage, pipelines, scoring, connector
 
 ```
 Decision impacts system structure → ADR (permanent, repo-level)
-Decision impacts only this feature → DECISIONS.<slug>.md (temporary, worktree-level)
+Decision impacts only this feature → .agents/DECISIONS.<slug>.md (temporary, worktree-level)
 ```
 
-Never put structural decisions only in DECISIONS.<slug>.md.
+Never put structural decisions only in .agents/DECISIONS.<slug>.md.
 Never put feature-implementation details in an ADR.
 
 ---
@@ -105,11 +105,11 @@ Never put feature-implementation details in an ADR.
 Every feature worktree MUST contain before coding starts:
 
 - [ ] `.agents/_STATE.md` (immutable template — must exist in repo)
-- [ ] `STATE.<slug>.md` (filled by `$planner`)
+- [ ] `.agents/STATE.<slug>.md` (filled by `$planner`)
 - [ ] `.agents/_TODO.md` (immutable template — must exist in repo)
-- [ ] `TODO.<slug>.md` (initialized by `$coder`, tasks from STATE)
+- [ ] `.agents/TODO.<slug>.md` (initialized by `$coder`, tasks from STATE)
 - [ ] `.agents/_DECISIONS.md` (immutable template — must exist in repo)
-- [ ] `DECISIONS.<slug>.md` (initialized by `$coder`, empty at start)
+- [ ] `.agents/DECISIONS.<slug>.md` (initialized by `$coder`, empty at start)
 
 `$preflight` validates this checklist before allowing coding.
 
@@ -121,9 +121,9 @@ After a branch is merged:
 
 | Artifact | Action |
 |----------|--------|
-| `STATE.<slug>.md` | Archive if audit required, otherwise delete |
-| `TODO.<slug>.md` | Delete — history is preserved in commit log |
-| `DECISIONS.<slug>.md` | Promote structural decisions to ADR, then delete |
+| `.agents/STATE.<slug>.md` | Archive if audit required, otherwise delete |
+| `.agents/TODO.<slug>.md` | Delete — history is preserved in commit log |
+| `.agents/DECISIONS.<slug>.md` | Promote structural decisions to ADR, then delete |
 | ADR | Permanent — never delete |
 
 ---
@@ -208,4 +208,5 @@ Which documentation updates are required based on what changed.
 - Do not implement code
 - Do not edit immutable templates
 - Do not invent tasks in TODO — tasks come from STATE
-- Do not allow structural decisions to remain only in DECISIONS.<slug>.md
+- Do not allow structural decisions to remain only in .agents/DECISIONS.<slug>.md
+

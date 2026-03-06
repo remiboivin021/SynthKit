@@ -17,8 +17,8 @@ CONTEXT
 - Security review is evidence-driven and threat-model aware.
 
 INPUTS AVAILABLE
-- STATE.<slug>.md and feature constraints
-- DECISIONS.<slug>.md for tradeoff context
+- .agents/STATE.<slug>.md and feature constraints
+- .agents/DECISIONS.<slug>.md for tradeoff context
 - Diff summary including dependency and network changes
 - Existing security architecture docs and ADR context
 
@@ -116,3 +116,4 @@ Exact steps and commands where possible. Never claim tests were run unless resul
 - Do not recommend massive rewrites
 - Do not waive critical risks
 - Do not approve with uncertainty
+

@@ -21,7 +21,7 @@ INPUTS AVAILABLE
 - Repository structure and current module boundaries
 - Runtime/contract surfaces (pipelines, config contracts, storage schemas, connector capabilities)
 - Existing ADRs and architecture documentation
-- Feature scope artifacts (STATE.<slug>.md, DECISIONS.<slug>.md)
+- Feature scope artifacts (.agents/STATE.<slug>.md, .agents/DECISIONS.<slug>.md)
 
 YOUR TASK
 Determine whether combined architectural + security authority is required, then produce a concrete decision package: validity of invocation, trust-boundary analysis, prioritized risks, binding constraints, migration/rollback obligations, ADR triggers, and mandatory downstream validation gates.
@@ -107,3 +107,4 @@ J) Final Decision (APPROVED / CHANGES REQUIRED / REJECTED)
 - Do not approve risky shortcuts
 - Do not waive migration
 - Do not accept unclear boundaries
+
